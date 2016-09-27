@@ -1,3 +1,5 @@
+package HW1.External;
+
 import java.util.Scanner;
 import java.io.PrintStream;
 import java.lang.String;
