@@ -35,10 +35,10 @@ public class Converter
 		paths[1][2] = "c";
 		paths[2][0] = "N";
 		paths[2][1] = "N";
-		paths[2][2] = "E + c";
+		paths[2][2] = "(E + c)";
 		R.put(0,paths);
 
-		for( int m = 1; m < stateCount; m++ )
+		for( int m = 1; m <= stateCount; m++ )
 		{
 			int k, i, j;
 			String temp[][] = new String[stateCount][stateCount];
@@ -50,7 +50,14 @@ public class Converter
 			{
 				for( j = 0; j < stateCount; j++ )
 				{
-					temp[i][j] = prev[i][j] + " + "+ prev[i][k] + "(" + prev[k][k] + ")" + prev[k][j];
+					if( m == stateCount)
+					{
+						temp[i][j] = "[" + prev[i][j] + " + "+ prev[i][k-1] + "(" + prev[k-1][k-1] + ")" + prev[k-1][j] +"]";
+					}
+					else
+					{
+						temp[i][j] = "[" + prev[i][j] + " + "+ prev[i][k] + "(" + prev[k][k] + ")" + prev[k][j] +"]";
+					}
 					/* simplify temp[][] here*/
 //					temp[i][j] = simplifyParts1(temp[i][j]);
 					/* simplify temp[][] here */
