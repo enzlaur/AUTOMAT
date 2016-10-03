@@ -52,14 +52,14 @@ public class Converter
 				{
 					if( m == stateCount)
 					{
-						temp[i][j] = "[" + prev[i][j] + " + "+ prev[i][k-1] + "(" + prev[k-1][k-1] + ")" + prev[k-1][j] +"]";
+						temp[i][j] = "[" + prev[i][j] + " + "+ prev[i][k-1] + "(" + prev[k-1][k-1] + ")*" + prev[k-1][j] +"]";
 					}
 					else
 					{
-						temp[i][j] = "[" + prev[i][j] + " + "+ prev[i][k] + "(" + prev[k][k] + ")" + prev[k][j] +"]";
+						temp[i][j] = "[" + prev[i][j] + " + "+ prev[i][k] + "(" + prev[k][k] + ")*" + prev[k][j] +"]";
 					}
 					/* simplify temp[][] here*/
-//					temp[i][j] = simplifyParts1(temp[i][j]);
+					//temp[i][j] = simplifyParts1(temp[i][j]);
 					/* simplify temp[][] here */
 					println("["+m+"]" + i+"-"+j + ": " + temp[i][j]);
 				}
